@@ -1,8 +1,20 @@
-body{
-    padding-top: 50px;
-}
-
 .principal {
     padding:40px 15px;
     text-align: center;
 }
+
+#logo:hover span{
+    color:#d07543;
+}
+
+.img-box img#img-hover {
+    display: none;
+ }
+ 
+ #logo:hover img#img-default {
+    display: none;
+ }
+ 
+ #logo:hover img#img-hover {
+    display: inherit;
+ }
