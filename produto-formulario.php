@@ -1,6 +1,8 @@
 <?php include("cabecalho.php") ?>
 
-<table class="table table-bordered table-dark">
+<h1>Adicionar Produto</h1>
+
+<table class="table table-bordered table-light">
     <form action='adiciona-produto.php' method='post'>
         <tr>
             <td>Nome:</td>
@@ -11,7 +13,7 @@
             <td><input class="form-control" type='number' name='preco'><br/></td>
         </tr>
         <tr>
-            <td><input type='submit' class='btn btn-primary'value='Enviar'></td>
+            <td colspan="2" align="center" ><input type='submit' class='btn btn-dark'value='Enviar'></td>
         </tr>
     </form>
 </table>
