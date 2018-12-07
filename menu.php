@@ -23,7 +23,7 @@
                 </li>
             </ul>
         </div>
-        <form class="form-inline my-2 my-lg-0" method="get" action="busca.php">
+        <form class="form-inline my-2 my-lg-0" method="get" action="mostra-produtos.php">
                 <input class="form-control mr-sm-2" name="busca" size="30" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
                 <button class="btn btn-outline-light my-2 my-sm-0"  type="submit">Buscar</button>
         </form>

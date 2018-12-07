@@ -1,10 +1,11 @@
- <?php include("cabecalho.php") ?>
- <?php include("bancoUtil.php") ?>
+ <?php include("cabecalho.php");
+ include("bancoUtil.php");
+
+ $removido = isset($_GET['removido'])?"":"style='display:none'";
+ ?>
     
-    <h2> Lista de Produtos </h2>
-    <?php if (isset($_POST["deletado"]) && $_POST["deletado"] == true) : ?>    
-        <p class="alert-success">Produto removido com sucesso</p>
-    <?php endif ?>
+    <h2> Lista de Produtos </h2>    
+    <p class="alert-success" <?=$removido?> >Produto removido com sucesso</p>
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
@@ -15,7 +16,8 @@
         </thead>
         <tbody>
             <?php 
-                $produtos = buscarProduto(conectarBanco());    
+                
+                $produtos = isset($_GET['busca'])?buscarProduto(conectarBanco(), $_GET['busca']):listarProduto(conectarBanco());    
                 foreach($produtos as $produto) :?>
                     <tr>
                         <td><?=$produto["nome"]?></td>
