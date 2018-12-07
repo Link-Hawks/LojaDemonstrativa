@@ -35,3 +35,11 @@
         }
         return $arrayProdutos;
     }
+
+    function alteraProduto($conexao, $id, $nome, $preco ){
+        $query = "update produtos set nome='{$nome}', preco='{$preco}' where id={$id}";
+        if($nome != '' && $preco != '')
+            return mysqli_query($conexao,$query);
+        else 
+            throw new Exception('Nome nem produtos podem ser em branco');
+    }

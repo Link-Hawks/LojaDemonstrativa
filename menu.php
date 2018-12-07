@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top navbar-inverse" style="padding:10px;">
     <div class="container">
         <a class="navbar-brand" id="logo" href="index.php">
             <div class="img-box d-inline-block">
@@ -24,7 +24,7 @@
             </ul>
         </div>
         <form class="form-inline my-2 my-lg-0" method="get" action="mostra-produtos.php">
-                <input class="form-control mr-sm-2" name="busca" size="30" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
+                <input class="form-control mr-sm-2" name="busca" size="30" type="search" placeholder="O que você procura?" aria-label="Buscar">
                 <button class="btn btn-outline-light my-2 my-sm-0"  type="submit">Buscar</button>
         </form>
     </div>

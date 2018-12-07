@@ -16,14 +16,17 @@
         </thead>
         <tbody>
             <?php 
-                
+
                 $produtos = isset($_GET['busca'])?buscarProduto(conectarBanco(), $_GET['busca']):listarProduto(conectarBanco());    
                 foreach($produtos as $produto) :?>
                     <tr>
                         <td><?=$produto["nome"]?></td>
                         <td><?=$produto["preco"]?></td>
                         <td align="center">
-                            <form action="alteraProduto.php" method="post">
+                            <form action="produto-formulario.php" method="post">
+                                <input type="hidden" name="id" value="<?=$produto["id"]?>">
+                                <input type="hidden" name="nome" value="<?=$produto["nome"]?>">
+                                <input type="hidden" name="preco" value="<?=$produto["preco"]?>">
                                 <button class="btn btn-warning">Alterar</button>
                             </form>
                         </td>
