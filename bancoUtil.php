@@ -3,8 +3,8 @@
         return mysqli_connect('localhost','root','','loja');
     }
 
-    function adicionarProduto($conexao, $nome, $preco){
-        $query = "insert into produtos (nome,preco) values ('{$nome}','{$preco}');";
+    function adicionarProduto($conexao, $nome, $preco, $descricao){
+        $query = "insert into produtos (nome,preco,descricao) values ('{$nome}','{$preco}','{$descricao}');";
         if($nome != '' && $preco != '')
             return mysqli_query($conexao,$query);
         else 
@@ -36,8 +36,8 @@
         return $arrayProdutos;
     }
 
-    function alteraProduto($conexao, $id, $nome, $preco ){
-        $query = "update produtos set nome='{$nome}', preco='{$preco}' where id={$id}";
+    function alteraProduto($conexao, $id, $nome, $preco,$descricao){
+        $query = "update produtos set nome='{$nome}', preco='{$preco}', descricao='{$descricao}' where id={$id}";
         if($nome != '' && $preco != '')
             return mysqli_query($conexao,$query);
         else 

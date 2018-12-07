@@ -4,8 +4,9 @@ include("bancoUtil.php");
     <?php
         $nome = $_POST['nome'];
         $preco = $_POST['preco'];
+        $descricao = $_POST['descricao'];
         try {
-            adicionarProduto(conectarBanco(), $nome, $preco);
+            adicionarProduto(conectarBanco(), $nome, $preco, $descricao);
     ?>
     <p class="text-success">Produto <?= $nome ?><?= ','.$preco?> adicionado com sucesso!</p>
         <?php } catch(Exception $exc) {?>
