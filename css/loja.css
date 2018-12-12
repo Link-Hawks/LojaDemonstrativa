@@ -4,7 +4,7 @@
 }
 
 #logo:hover span{
-    color:#d07543;
+    color:#c41230;
 }
 
 .img-box img#img-hover {
@@ -17,4 +17,8 @@
  
  #logo:hover img#img-hover {
     display: inherit;
+ }
+
+ .bg-dark{
+     background-color: #000 !important;
  }

@@ -27,7 +27,7 @@
     }
 
     function buscarProduto($conexao, $busca){
-        $query = "select * from produtos where nome like '{$busca}%'";
+        $query = "select * from produtos where nome like \'{$busca}%\'";
         $resultado = mysqli_query($conexao, $query);
         $arrayProdutos = array();        
         while($produto = mysqli_fetch_assoc($resultado)){
