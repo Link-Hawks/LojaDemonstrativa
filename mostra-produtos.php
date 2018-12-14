@@ -72,4 +72,6 @@
             </tbody>
         </table>
     </div>
- <?php include("rodape.php") ?>
+ <?php include("rodape.php");
+                                //teste
+?>
