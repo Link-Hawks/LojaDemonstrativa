@@ -22,3 +22,16 @@
  .bg-dark{
      background-color: #000 !important;
  }
+
+.ordena{
+    float:right;
+    margin-left:15;
+    color: #ffc107;
+    display: none;
+}
+
+@media (min-width:770px){
+    .ordena{
+        display: inline-block;
+    }
+}

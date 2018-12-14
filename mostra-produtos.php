@@ -10,9 +10,17 @@
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Preço</th>
-                    <th scope="col">Descrição</th>
+                    <th scope="col">
+                        Nome                        
+                        <a href="#"><i class="fas fa-sort ordena" id="ordenar-nome" ></i></a>
+                    </th>
+                    <th scope="col">
+                        Preço                        
+                        <a href="#"><i class="fas fa-sort ordena" id="ordenar-preco" ></i></a>
+                    </th>
+                    <th scope="col">
+                        Descrição                        
+                    </th>
                     <th colspan="2"></th>
                 </tr>
             </thead>
