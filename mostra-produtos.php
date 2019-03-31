@@ -1,11 +1,11 @@
  <?php include("cabecalho.php");
- include("bancoUtil.php");
+ include("bancoProduto.php");
 
  $removido = isset($_GET['removido'])?"":"style='display:none'";
  ?>
     
     <h1> Lista de Produtos </h1>    
-    <p class="alert-success" <?=$removido?> >Produto removido com sucesso</p>
+    <p class="alert-success" <?=$removido?>>Produto removido com sucesso</p>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
@@ -27,7 +27,7 @@
             <tbody>
                 <?php 
 
-                    $produtos = isset($_GET['busca'])?buscarProduto(conectarBanco(), $_GET['busca']):listarProduto(conectarBanco());    
+                    $produtos = isset($_GET['busca'])?buscarProduto($conexao, $_GET['busca']):listarProduto($conexao);    
                     foreach($produtos as $produto) :?>
                         <tr>
                             <td><?=$produto["nome"]?></td>

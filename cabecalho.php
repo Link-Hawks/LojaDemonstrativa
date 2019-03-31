@@ -17,4 +17,8 @@
     <?php include("menu.php")?>
         
     <div class="container">
-        <div class="principal">
+        <div class="principal">        
+            <?php require_once("conexao-usuario.php"); 
+            red_usuario_nao_logado($logado);?>
+           
+            

@@ -1,5 +1,7 @@
 <?php include("cabecalho.php");
-include("bancoUtil.php");
+include("bancoProduto.php");
+require_once("conexao-usuario.php"); 
+red_usuario_nao_logado($logado);
 ?>
     <?php
         $nome = $_POST['nome'];
@@ -7,7 +9,7 @@ include("bancoUtil.php");
         $id = $_POST['id'];
         $descricao = $_POST['descricao'];
         try {
-            alteraProduto(conectarBanco(), $id, $nome, $preco,$descricao);
+            alteraProduto($conexao, $id, $nome, $preco,$descricao);
     ?>
     <p class="text-success">Produto <?= $nome ?><?= ", {$preco}"?> alterado com sucesso!</p>
     <?php } catch(Exception $exc) {?>
