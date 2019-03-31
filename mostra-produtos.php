@@ -10,18 +10,18 @@
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">
+                    <th scope="col" colspan="1">
                         Nome                        
                         <a href="#"><i class="fas fa-sort ordena" id="ordenar-nome" ></i></a>
                     </th>
-                    <th scope="col">
+                    <th scope="col" colspan="1">
                         Preço                        
                         <a href="#"><i class="fas fa-sort ordena" id="ordenar-preco" ></i></a>
                     </th>
-                    <th scope="col">
+                    <th scope="col" colspan="1">
                         Descrição                        
                     </th>
-                    <th colspan="2"></th>
+                    <th colspan="2" style="min-whidth:40%"></th>
                 </tr>
             </thead>
             <tbody>
@@ -29,57 +29,59 @@
 
                     $produtos = isset($_GET['busca'])?buscarProduto($conexao, $_GET['busca']):listarProduto($conexao);    
                     foreach($produtos as $produto) :?>
-                        <tr>
-                            <td><?=$produto["nome"]?></td>
-                            <td><?=$produto["preco"]?></td>
-                            <td><?=substr(utf8_encode($produto["descricao"]),0,35)?><?=strlen($produto["descricao"])>=35?"...":''?>
-                            </td>
-                            <td align="center">
-                                <form action="produto-formulario.php" method="post">
-                                    <input type="hidden" name="id" value="<?=$produto["id"]?>">
-                                    <input type="hidden" name="nome" value="<?=$produto["nome"]?>">
-                                    <input type="hidden" name="preco" value="<?=$produto["preco"]?>">
-                                    <input type="hidden" name="descricao" value="<?=utf8_encode($produto["descricao"])?>">
-                                    <button class="btn btn-warning">Alterar</button>
-                                </form>
-                            </td>
-                            <td align="center">
+                      <tr>
+                          <td><?=$produto["nome"]?></td>
+                          <td><?=$produto["preco"]?></td>
+                          <td><?=substr(utf8_encode($produto["descricao"]),0,35)?><?=strlen($produto["descricao"])>=35?"...":''?>
+                          </td>
+                          <td align="center">
+                              <form action="produto-formulario.php" method="post">
+                                  <input type="hidden" name="id" value="<?=$produto["id"]?>">
+                                  <input type="hidden" name="nome" value="<?=$produto["nome"]?>">
+                                  <input type="hidden" name="preco" value="<?=$produto["preco"]?>">
+                                  <input type="hidden" name="descricao" value="<?=utf8_encode($produto["descricao"])?>">
+                                  <button class="btn btn-warning">Alterar</button>
+                              </form>
+                          </td>
+                          <td align="center">
 
-                                <form action="removeProduto.php" method="post">
-                                    <input type="hidden" name="id" value="<?=$produto["id"]?>">
+                              <form action="removeProduto.php" method="post">
+                                  <input type="hidden" name="id" value="<?=$produto["id"]?>">
 
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter<?=$produto["id"]?>">
-                                     Remover
-                                    </button>
+                                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter<?=$produto["id"]?>">
+                                    Remover
+                                  </button>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModalCenter<?=$produto["id"]?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                      <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalCenterTitle">Remover Produto</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div class="modal-body">
-                                            Deseja realmente remover <?=strtolower($produto["nome"])?>?
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="submit" class="btn btn-danger">Confirmar</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          </div>
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="exampleModalCenter<?=$produto["id"]?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalCenterTitle">Remover Produto</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          Deseja realmente remover <?=strtolower($produto["nome"])?>?
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="submit" class="btn btn-danger">Confirmar</button>
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         </div>
                                       </div>
                                     </div>
-                                </form>
+                                  </div>
+                              </form>
 
-                            </td>
-                        </tr>
+                          </td>
+                      </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
     </div>
+    <script src="js/produto.js"></script>
+    <script src="js/Views/TabelaProduto.js"></script>
  <?php include("rodape.php");
                                 //teste
 ?>
