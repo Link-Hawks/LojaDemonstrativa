@@ -4,5 +4,6 @@
     red_usuario_nao_logado($logado);
     $id = $_POST['id'];
     removerProduto($conexao,$id);
-    header("Location: mostra-produtos.php?removido=true");
+    $_SESSION["mensagem-success"] = "Produto removido com sucesso";
+    header("Location: mostra-produtos.php");
     die();

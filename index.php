@@ -15,6 +15,7 @@
     require_once("conexao-usuario.php")?>
 
     <?php if ($conectouComSucesso): ?>
+   
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -40,9 +41,13 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div>  
+      
+      <p class="alert-success" style="text-align:center"> Conectado com sucesso como <?=usuario_logado()?>.
+        <a href="logout.php" class="text-danger" >Deslogar</a>
+      </p>
     <?php endif ?>
-
+  
     <div class="container">
       <div class="principal">
         <?php require_once("form-conexao.php"); ?>

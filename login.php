@@ -6,10 +6,12 @@
     $usuario = buscaUsuario($conexao,$_POST["email"], $_POST["senha"]);
     
     if($usuario){
-        header("Location: index.php?login=1");
+        $_SESSION["mensagem-success"]="Usuario logado com sucesso!";
         loga_usuario($_POST["email"]);
+        header("Location: index.php");
     }else{
-        header("Location: index.php?login=0");
+        $_SESSION["mensagem-danger"]="Erro ao logar!";
+        header("Location: index.php");
     }
     die();
 ?>

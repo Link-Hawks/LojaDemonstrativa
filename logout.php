@@ -1,5 +1,6 @@
 <?php
 require_once("usuario.php");
 logout();
-header("Location: index.php?Logout=1");
+$_SESSION["mensagem-success"] = "Usuario deslogado com sucesso";
+header("Location: index.php");
 die();

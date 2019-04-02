@@ -1,23 +1,7 @@
 <?php require_once("conexao-usuario.php");
-require_once("usuario.php");
+require_once("usuario.php"); ?>
 
-if($conectou): ?>
-    <p class="alert-success"> Conectado com sucesso como <?=usuario_logado()?>.
-        <a href="logout.php" class="text-danger">Deslogar</a>
-    </p>
-<?php endif ?>
-
-<?php if($falhaAoConectar): ?>
-    <p class="alert-danger"> Não foi possível logar </p>
-<?php endif ?>
-
-<?php if($falhaDeSeguranca): ?>
-    <p class="alert-danger"> Você não tem acesso a esta funcionalidade </p>
-<?php endif ?>
-
-<?php if($deslogou): ?>
-    <p class="alert-success"> Deslogado com sucesso. </p>
-<?php endif ?>
+<?php require_once("mensagens.php") ?>
 
 <?php if (!usuario_esta_logado()):?>
     <h1> Login </h1>
