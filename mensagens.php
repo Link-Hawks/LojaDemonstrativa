@@ -1,9 +1,11 @@
-<?php  if(isset($_SESSION["mensagem-danger"])): ?>
-    <p class="text-danger"><?=$_SESSION["mensagem-danger"]?></p>
-    <?php unset($_SESSION["mensagem-danger"]); ?>
-<?php endif ?>
+<?php  function mostraMensagem($tipo){ 
+    if(isset($_SESSION["mensagem-$tipo"])): ?>
+        <p class="text-<?=$tipo?>"><?=$_SESSION["mensagem-$tipo"]?></p>
+        <?php unset($_SESSION["mensagem-$tipo"]); ?>
+    <?php endif ?>
+<?php }
 
-<?php  if(isset($_SESSION["mensagem-success"])): ?>
-    <p class="text-success"><?=$_SESSION["mensagem-success"]?></p>
-    <?php unset($_SESSION["mensagem-success"]); ?>
-<?php endif ?>
+mostraMensagem("danger");
+mostraMensagem("success");
+
+?>
