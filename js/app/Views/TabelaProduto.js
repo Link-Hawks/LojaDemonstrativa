@@ -7,8 +7,7 @@ class TabelaProduto{
         $(".table-responsive tbody tr").show();
     }
 
-    adicionaProdutos(produtos){
-        console.log(produtos);
+    montaPor(produtos){
         produtos.forEach((produto)=>{
             this._montaTR(produto);
         })
@@ -24,7 +23,6 @@ class TabelaProduto{
 
     _montaTD(produto){
         let btn_alterar = this._gerarAlterar(produto).html();
-        console.log(btn_alterar);
         let btn_remover = this._gerarRemover(produto).html();
         return $(`
             <td>${produto.nome}</td>
@@ -83,4 +81,5 @@ class TabelaProduto{
         </span>
         `);
     }
+    
 }

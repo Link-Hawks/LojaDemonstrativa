@@ -1,4 +1,4 @@
-<?php include("cabecalho.php");
+<?php include("View/cabecalho.php");
 $produtoId = isset($_POST['id'])?$_POST['id']:'';
 $produtoPreco = isset($_POST['preco'])?$_POST['preco']:'';
 $produtoNome = isset($_POST['nome'])?$_POST['nome']:'';

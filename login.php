@@ -1,9 +1,9 @@
 <?php
-    require_once("conecta.php");
     require_once("bancoUsuario.php");
     require_once("usuario.php");
+    require_once("DAO/SingletonProduto.php");
 
-    $usuario = buscaUsuario($conexao,$_POST["email"], $_POST["senha"]);
+    $usuario = buscaUsuario(SingletonProduto::getConexao(),$_POST["email"], $_POST["senha"]);
     
     if($usuario){
         $_SESSION["mensagem-success"]="Usuario logado com sucesso!";
